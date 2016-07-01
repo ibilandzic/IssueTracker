@@ -1,0 +1,49 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Početna</a></li>
+                   <li class="active">Nedodjeljene prijave</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Nedodjeljene prijave</h3>
+               <hr>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-xs-12" ng-if="!showIssues">
+                <h3>{{message}}</h3>
+            </div>
+            
+            <div  ng-if="showIssues">
+                <!-- new stuff -->
+            <div ng-repeat="issue in unassignedIssues" class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="card card-block">
+                  <div class="card-header">
+                    <h4 class="card-title">{{issue.title}}</h4>  
+                  </div>
+                    
+                      <div class="card-content">
+                      <p class="card-text">Kategorija: {{issue.category}}</p>
+                      <p class="card-text">Lokacija: {{issue.location}}</p>
+                      <p class="card-text">Status: {{issue.status}}</p>
+                      <p class="card-text">Prioritet: {{issue.priority}}</p>
+                      <select>
+                          <div ng-repeat="personel in allPersonel">
+                              <option value="{{personel.username}}">{{personel.username}}</option>
+                          </div>
+                      </select>
+                      <button type="submit" class="btn btn-info btn-block" ng-click="assignIssue(issue.id,personel.username)">Dodjeli zadatak</button>
+                      </div>
+                   
+                    
+                </div>
+                
+            </div> 
+        </div>
+            
+           
+        </div>
+
+</div>

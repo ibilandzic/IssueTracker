@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Issue": {
+    "dataSource": "cloudant",
+    "public": true
+  },
+  "Message": {
+    "dataSource": "cloudant",
+    "public": true
+  },
+  "Status": {
+    "dataSource": "cloudant",
+    "public": true
+  },
+  "Priority": {
+    "dataSource": "cloudant",
+    "public": true
+  },
+  "Account": {
+    "dataSource": "cloudant",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "cloudant",
+    "public": true
+  }
+}

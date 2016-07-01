@@ -1,0 +1,47 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Početna</a></li>
+                   <li class="active">Moje prijave</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Pregled mojih prijava</h3>
+               <hr>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-xs-12" ng-if="!showIssues">
+                <h3>{{message}}</h3>
+            </div>
+            
+            <div  ng-if="showIssues">
+                <!-- new stuff -->
+            <div ng-repeat="issue in myIssues" class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="card card-block">
+                  <div class="card-header">
+                    <h4 class="card-title">{{issue.title}}</h4>  
+                  </div>
+                    
+                      <div class="card-content">
+                      <p class="card-text">Kategorija: {{issue.category}}</p>
+                      <p class="card-text">Lokacija: {{issue.location}}</p>
+                      <p class="card-text">Status: {{issue.status}}</p>
+                      <p class="card-text">Prioritet: {{issue.priority}}</p> 
+                      </div>
+                      
+                      <div class="extra content">
+                          <a ui-sref="app.issuedetails({id: issue.id})">Pregled detalja prijave
+                        </a>
+                      </div>
+                    
+                </div>
+                
+            </div> 
+        </div>
+            
+           
+        </div>
+
+</div>

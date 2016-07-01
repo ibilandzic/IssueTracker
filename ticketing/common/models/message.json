@@ -1,0 +1,38 @@
+{
+  "name": "Message",
+  "plural": "Messages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "issue_id": {
+      "type": "string",
+      "required": true
+    },
+    "posted_by": {
+      "type": "string",
+      "required": true
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "issue": {
+      "type": "belongsTo",
+      "model": "Issue",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

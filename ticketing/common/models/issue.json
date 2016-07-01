@@ -1,0 +1,57 @@
+{
+  "name": "Issue",
+  "plural": "Issues",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created_by": {
+      "type": "string",
+      "required": true
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "Open"
+    },
+    "priority": {
+      "type": "string",
+      "default": "Normal"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "descr": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,62 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Početna</a></li>
+                   
+                   <li class="active">Osobni podaci</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Izmjena osobnih podataka</h3>
+               <hr>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            
+            <div class="col-xs-12" ng-if="!showForm">
+                <h3>{{message}}</h3>
+            </div>
+        
+            <div class="col-xs-12 col-sm-9 col-lg-6" ng-if="showForm">
+                    
+                <form ng-submit="updateAccount()">
+                <div class="form-group">
+                    <label class="sr-only" for="companyName">Ime tvrtke</label>
+                    <input type="text" class="form-control input-sm" id="companyName" placeholder="Ime tvrtke" ng-model="personalData.company_name" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="firstName">Ime</label>
+                    <input type="text" class="form-control input-sm" id="firstName" placeholder="Ime" ng-model="personalData.first_name" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="lastName">Prezime</label>
+                    <input type="text" class="form-control input-sm" id="lastName" placeholder="Prezime" ng-model="personalData.last_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email adresa</label>
+                    <input type="email" class="form-control input-sm" id="email" placeholder="Email" ng-model="personalData.email" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="address">Addresa</label>
+                    <input type="text" class="form-control input-sm" id="address" placeholder="Addresa" ng-model="personalData.address" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="location">Lokacija</label>
+                    <input type="text" class="form-control input-sm" id="location" placeholder="Kat, broj sobe..." ng-model="personalData.location" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="phoneNumber">Kontakt telefon</label>
+                    <input type="text" class="form-control input-sm" id="phoneNumber" placeholder="Kontakt telefon" ng-model="personalData.phone" required>
+                </div>
+                
+              
+                <button type="submit" class="btn btn-info btn-block" ng-click="updateAccount()">Spremi promjene</button>
+                
+            </form>
+            </div>
+        </div>
+
+    </div>

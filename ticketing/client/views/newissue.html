@@ -1,0 +1,65 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Početna</a></li>
+                   
+                   <li class="active">Novi zahtjev</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Kreiraj novi zahtjev</h3>
+               <hr>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            
+            <div class="col-xs-12" ng-if="!showForm">
+                <h3>{{message}}</h3>
+            </div>
+        
+            <div class="col-xs-12 col-sm-9 col-lg-6" ng-if="showForm">
+                    
+                <form class="form-horizontal" name="itemForm" ng-submit="submitIssue()" novalidate>
+                    <div class="form-group">
+                    <label class="sr-only" for="title">Naslov zahtjeva</label>
+                    <input type="text" class="form-control input-sm" id="title" placeholder="Naslov zahtjeva" ng-model="newIssue.title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="descr">Kratki opis</label>
+                        <textarea class="form-control" rows="12" name="descr" id="descr"
+                                ng-model="newIssue.descr" placeholder="Molim opisati zahtjev" required>
+                            </textarea>
+                    </div>
+                    
+                    
+                     <div class="form-group">
+                        <label class="sr-only" for="category">Kategorija</label>
+                        <select type="text" id="category" ng-model="newIssue.category" name="category" required>
+                         
+                                  <option ng-repeat="category in allCategories" value="{{category.descr}}">{{category.descr}}</option>
+                            </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="priority">Prioritet riješavanja</label>
+                        <select type="text" id="priority" ng-model="newIssue.priority" required>
+                           
+                              <option ng-repeat="priority in allPriorities" value="{{priority.descr}}">{{priority.descr}}</option>
+                            </select>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label class="sr-only" for="location">Lokacija korisnika</label>
+                    <input type="text" class="form-control input-sm" id="location" placeholder="Lokacija (zgrada, soba...)" ng-model="newIssue.location" required>
+                    </div>
+                  
+                    
+                    <button type="submit" class="btn btn-info btn-block">Pošalji zahtjev</button>
+                </form>
+            </div>
+        </div>
+
+    </div>

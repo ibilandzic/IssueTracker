@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "cloudant": {
+    "host": "8b0bb2cf-2202-4dec-8b37-4c7803d23bdf-bluemix.cloudant.com",
+    "port": 443,
+    "url": "https://8b0bb2cf-2202-4dec-8b37-4c7803d23bdf-bluemix:85e08f191f8d36ba4b140dfe0d878ff9cf4938cca7d1dd0bbed831148e3744ca@8b0bb2cf-2202-4dec-8b37-4c7803d23bdf-bluemix.cloudant.com",
+    "database": "failure_report",
+    "username": "8b0bb2cf-2202-4dec-8b37-4c7803d23bdf-bluemix",
+    "password": "85e08f191f8d36ba4b140dfe0d878ff9cf4938cca7d1dd0bbed831148e3744ca",
+    "name": "cloudant",
+    "connector": "cloudant"
+  }
+}

@@ -1,0 +1,82 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Početna</a></li>
+                   <li class="active">Pregled prijave</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Pregled prijave</h3>
+               <hr>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-xs-8 col-sm-6 col-lg-4" ng-if="!showIssue">
+                <h3>{{message}}</h3>
+            </div>
+            <div  ng-if="showIssue">
+                
+                <div class="card">
+                  
+                    <div class="card-header">
+                      <h4 class="card-title">{{issue.title}}</h4>  
+                    </div>
+                      <div class="card-block">
+                          <p class="card-text"><b>Kategorija:</b> {{issue.category}}</p>
+                      <p class="card-text"><b>Lokacija:</b> {{issue.location}}</p>
+                      <p class="card-text"><b>Status:</b> {{issue.status}}</p>
+                      <p class="card-text"><b>Prioritet:</b> {{issue.priority}}</p>
+                      </div>
+                      <div class="card-footer">
+                       <p class="card-text"><small><b>Kreirano:</b> {{issue.createdAt|date:'medium'}}</small></p>   
+                      </div>
+                      
+                      
+                      
+                    
+                </div>
+                
+                <div ng-repeat="msg in messages">
+                    
+                    <div class="card">
+                        <div class="card-header">
+                         <p class="username">{{msg.posted_by}}</p>  
+                        </div>
+                        <div class="card-content card-block">
+                            <p>{{msg.message}}</p>
+                        </div>
+                        
+                        <div class="card-footer">
+                            
+                            <p class="timestamp">{{msg.createdAt|date:'medium'}}</p>
+                        </div>
+                        <!--
+                        <p class="card-text"><small>Poruka kreirana: {{msg.createdAt}}</small></p>
+                        <p class="card-text"><small>Autor poruke: {{msg.posted_by}}</small></p>
+                     -->
+                    </div>
+                
+                   
+                    
+                </div>
+                               
+                <form class="form-horizontal" name="messageForm" ng-submit="submitMessage()" novalidate>
+                  
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="msg">Tekst poruke</label>
+                        <textarea class="form-control" rows="12" name="msg" id="msg" ng-model="newMessage.message" placeholder="Tekst poruke" required>
+                            </textarea>
+                    </div>
+                       <button type="submit" class="btn btn-info btn-block">Objavi poruku</button>
+                </form>
+                
+                
+            </div>
+                
+                 
+            </div>
+        </div>
+

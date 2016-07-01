@@ -1,0 +1,66 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+            <div class="navbar-header">
+                <a class = "navbar-brand" href = "#" style="color:#000000; padding-right:10px; text-align:center; font-weight:bold">Issue tracker</a>
+            </div>
+            
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: stateis('app')}"><a ui-sref="app">
+                        <span class="glyphicon glyphicon-home"
+                         aria-hidden="true"></span> Početna stranica</a></li>
+                <!-- user needs to be logged in in order to see drop down menu -->
+                <!-- put here ng-if="loggedIn" -->
+                    <li class="dropdown" ng-if="loggedIn">
+                         <!-- dodati stanja u app js -->
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moj račun <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              <!-- non personel entries -->
+                            <li ng-class="{active: stateis('app.newissue')}" ng-show="!isPersonel"><a ui-sref="app.newissue">Kreiraj novu prijavu</a></li>
+                            <li ng-class="{active: stateis('app.myissues')}" ng-show="!isPersonel"><a ui-sref="app.myissues">Moje prijave</a></li>
+                            <!-- joined entries -->
+                            <li ng-class="{active: stateis('app.personaldata')}"><a ui-sref="app.personaldata">Promjena podataka</a></li>
+                            <!-- personel entries -->
+                            <li ng-class="{active: stateis('app.unassigned')}" ><a ui-sref="app.unassigned">Nove prijave</a></li>
+                            <li ng-class="{active: stateis('app.assignments')}" ng-show="isPersonel"><a ui-sref="app.assignments">Moji zadaci</a></li>
+                          </ul>
+                    </li>
+                </ul>
+            
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-if="!loggedIn"><a ng-click="openLogin()">
+                    <span class="glyphicon glyphicon-user"></span>Prijava</a>
+                    </li>
+                    <li ng-show="!loggedIn"><a ng-click="openRegister()">
+                    <span class=""></span>Novi korisnik </a>
+                    </li>
+                    <li ng-show="loggedIn">
+                    <span class=""></span>
+                    <a>{{username}}</a>
+                    </li>
+                    <li ng-show="loggedIn">
+                    <a ng-click="logOut()">
+                    <span class=""></span> Odjava</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>         
+               
+    <header class="jumbotron">
+
+        <!-- Main component for a primary marketing message or call to action -->
+ <!--
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12 col-sm-6 col-lg-8">
+                    <h2 style="font-weight:bold text-align:right"></h2>
+                </div>
+            
+                
+                
+            </div>
+        </div> 
+        -->
+    </header>
